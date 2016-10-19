@@ -127,12 +127,6 @@
             <message key="name.invalidPattern"
              value="Catch parameter name ''{0}'' must match pattern ''{1}''."/>
         </module>
-		<module name="SuppressionCommentFilter">
-            <property name="offCommentFormat" value="CHECKSTYLE.OFF\: ([\w\|]+)"/>
-            <property name="onCommentFormat" value="CHECKSTYLE.ON\: ([\w\|]+)"/>
-            <property name="checkFormat" value="$1"/>
-        </module>
-
         <module name="LocalVariableName">
             <property name="tokens" value="VARIABLE_DEF"/>
             <property name="format" value="^[a-z][a-z0-9][a-zA-Z0-9]*$"/>
@@ -245,9 +239,12 @@
 
     <!-- Location is overridable in a project. For mechanism, see -->
     <!-- http://checkstyle.sourceforge.net/config_filters.html#SuppressionFilter -->
-    <module name="SuppressionFilter">        
-      <property name="file" value="suppressions.xml"/>        
-      <property name="optional" value="true"/>
+
+    </module>
+		<module name="SuppressionCommentFilter">
+		<property name="offCommentFormat" value="CHECKSTYLE.OFF\: ([\w\|]+)"/>
+		<property name="onCommentFormat" value="CHECKSTYLE.ON\: ([\w\|]+)"/>
+		<property name="checkFormat" value="$1"/>
     </module>
 
 </module>
