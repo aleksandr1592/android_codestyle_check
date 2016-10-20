@@ -229,22 +229,16 @@
 	
     </module>
 
-    <!-- Allow turning checks off in the code -->        
-    <!-- See http://checkstyle.sourceforge.net/config.html#SuppressionCommentFilter -->        
-    <module name="SuppressionCommentFilter"/>        
-    
     <!-- Allow turning checks off in the code using @SuppressWarnings annotation -->        
     <!-- See http://checkstyle.sourceforge.net/config_filters.html#SuppressWarningsFilter -->        
     <module name="SuppressWarningsFilter"/>        
 
     <!-- Location is overridable in a project. For mechanism, see -->
     <!-- http://checkstyle.sourceforge.net/config_filters.html#SuppressionFilter -->
+	<module name="SuppressionCommentFilter">
+		<property name="offCommentFormat" value="CHECKSTYLE.OFF"/>
+		<property name="onCommentFormat" value="CHECKSTYLE.ON"/>
+    </module>
 
-    </module>
-		<module name="SuppressionCommentFilter">
-		<property name="offCommentFormat" value="CHECKSTYLE.OFF\: ([\w\|]+)"/>
-		<property name="onCommentFormat" value="CHECKSTYLE.ON\: ([\w\|]+)"/>
-		<property name="checkFormat" value="$1"/>
-    </module>
 
 </module>
