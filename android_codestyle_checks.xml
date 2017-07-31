@@ -111,6 +111,8 @@
 		<module name="MemberName">
             <property name="applyToPublic" value="true"/>
             <property name="applyToPrivate" value="false"/>
+	    <property name="applyToProtected" value="false"/>
+            <property name="applyToPackage" value="false"/>
             <property name="format" value="^(?!m[A-Z])[a-z]+[a-zA-Z0-9].*"/>
             <message key="name.invalidPattern"
              value="Member name ''{0}'' must match pattern ''{1}''."/>
